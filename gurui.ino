@@ -41,6 +41,11 @@ void setup() {
   strip.setBrightness(3);
   // put your setup code here, to run once:
 
+
+    
+
+
+
 }
 
 void loop() {
@@ -61,7 +66,7 @@ void loop() {
       Serial.print( poruka[3]);
       Serial.print( poruka[4]);
       Serial.println( poruka[5]);
-      pozicija = poruka[1] + poruka [2]*6;
+      pozicija = poruka[1] + poruka [2]*4;
       if (poruka[0] == 49 && poruka[1] == 0)
       {
         strip.setPixelColor(pozicija, strip.Color(255, 0, 0));
@@ -86,23 +91,134 @@ void loop() {
         strip.show();
 
       }
-            if (poruka[0] == 49 && poruka[1] == 4)
+
+      if (poruka[0] == 51 && poruka[1] == 0)
       {
-        strip.setPixelColor(pozicija, strip.Color(0, 255, 255));
+        strip.setPixelColor(0, strip.Color(255, 0, 0));
+        strip.setPixelColor(4, strip.Color(255, 0, 0));
+        strip.setPixelColor(8, strip.Color(255, 0, 0));
+        strip.setPixelColor(12, strip.Color(255, 0, 0));
+        strip.setPixelColor(16, strip.Color(255, 0, 0));
+        strip.setPixelColor(20, strip.Color(255, 0, 0));
+        strip.setPixelColor(24, strip.Color(255, 0, 0));
+        strip.setPixelColor(28, strip.Color(255, 0, 0));
+        strip.setPixelColor(32, strip.Color(255, 0, 0));
         strip.show();
 
       }
-            if (poruka[0] == 49 && poruka[1] == 5)
+            if (poruka[0] == 51 && poruka[1] == 1)
       {
-        strip.setPixelColor(pozicija, strip.Color(255, 0, 255));
+        strip.setPixelColor(1, strip.Color(255, 255, 0));
+        strip.setPixelColor(5, strip.Color(255, 255, 0));
+        strip.setPixelColor(9, strip.Color(255, 255, 0));
+        strip.setPixelColor(13, strip.Color(255, 255, 0));
+        strip.setPixelColor(17, strip.Color(255, 255, 0));
+        strip.setPixelColor(21, strip.Color(255, 255, 0));
+        strip.setPixelColor(25, strip.Color(255, 255, 0));
+        strip.setPixelColor(29, strip.Color(255, 255, 0));
+        strip.setPixelColor(33, strip.Color(255, 255, 0));
         strip.show();
 
       }
+            if (poruka[0] == 51 && poruka[1] == 2)
+      {
+        strip.setPixelColor(2, strip.Color(0, 255, 0));
+        strip.setPixelColor(6, strip.Color(0, 255, 0));
+        strip.setPixelColor(10, strip.Color(0, 255, 0));
+        strip.setPixelColor(14, strip.Color(0, 255, 0));
+        strip.setPixelColor(18, strip.Color(0, 255, 0));
+        strip.setPixelColor(22, strip.Color(0, 255, 0));
+        strip.setPixelColor(26, strip.Color(0, 255, 0));
+        strip.setPixelColor(30, strip.Color(0, 255, 0));
+        strip.setPixelColor(34, strip.Color(0, 255, 0));
+        strip.show();
+
+      }
+            if (poruka[0] == 51 && poruka[1] == 3)
+      {
+        strip.setPixelColor(3, strip.Color(0, 0, 255));
+        strip.setPixelColor(7, strip.Color(0, 0, 255));
+        strip.setPixelColor(11, strip.Color(0, 0, 255));
+        strip.setPixelColor(15, strip.Color(0, 0, 255));
+        strip.setPixelColor(19, strip.Color(0, 0, 255));
+        strip.setPixelColor(23, strip.Color(0, 0, 255));
+        strip.setPixelColor(27, strip.Color(0, 0, 255));
+        strip.setPixelColor(31, strip.Color(0, 0, 255));
+        strip.setPixelColor(35, strip.Color(0, 0, 255));
+        strip.show();
+
+      }
+            
 
       if (poruka[0] == 48)
       {
         strip.setPixelColor(pozicija, strip.Color(0, 0, 0));
         strip.show();
+        delay(75);
+
+      }
+
+      
+     if (poruka[0] == 52 && poruka[1] == 0)
+      {
+        strip.setPixelColor(0, strip.Color(0, 0, 0));
+        strip.setPixelColor(4, strip.Color(0, 0, 0));
+        strip.setPixelColor(8, strip.Color(0, 0, 0));
+        strip.setPixelColor(12, strip.Color(0, 0, 0));
+        strip.setPixelColor(16, strip.Color(0, 0, 0));
+        strip.setPixelColor(20, strip.Color(0, 0, 0));
+        strip.setPixelColor(24, strip.Color(0, 0, 0));
+        strip.setPixelColor(28, strip.Color(0, 0, 0));
+        strip.setPixelColor(32, strip.Color(0, 0, 0));
+        strip.show();
+        delay(75);
+
+      }
+     if (poruka[0] == 52 && poruka[1] == 1)
+      {
+        strip.setPixelColor(1, strip.Color(0, 0, 0));
+        strip.setPixelColor(5, strip.Color(0, 0, 0));
+        strip.setPixelColor(9, strip.Color(0, 0, 0));
+        strip.setPixelColor(13, strip.Color(0, 0, 0));
+        strip.setPixelColor(17, strip.Color(0, 0, 0));
+        strip.setPixelColor(21, strip.Color(0, 0, 0));
+        strip.setPixelColor(25, strip.Color(0, 0, 0));
+        strip.setPixelColor(29, strip.Color(0, 0, 0));
+        strip.setPixelColor(33, strip.Color(0, 0, 0));
+        strip.show();
+        delay(75);
+
+      }
+     
+     if (poruka[0] == 52 && poruka[1] == 2)
+      {
+        strip.setPixelColor(2, strip.Color(0, 0, 0));
+        strip.setPixelColor(6, strip.Color(0, 0, 0));
+        strip.setPixelColor(10, strip.Color(0, 0, 0));
+        strip.setPixelColor(14, strip.Color(0, 0, 0));
+        strip.setPixelColor(18, strip.Color(0, 0, 0));
+        strip.setPixelColor(22, strip.Color(0, 0, 0));
+        strip.setPixelColor(26, strip.Color(0, 0, 0));
+        strip.setPixelColor(30, strip.Color(0, 0, 0));
+        strip.setPixelColor(34, strip.Color(0, 0, 0));
+        strip.show();
+       delay(75);
+
+      }
+
+     if (poruka[0] == 52 && poruka[1] == 3)
+      {
+        strip.setPixelColor(3, strip.Color(0, 0, 0));
+        strip.setPixelColor(7, strip.Color(0, 0, 0));
+        strip.setPixelColor(11, strip.Color(0, 0, 0));
+        strip.setPixelColor(15, strip.Color(0, 0, 0));
+        strip.setPixelColor(19, strip.Color(0, 0, 0));
+        strip.setPixelColor(23, strip.Color(0, 0, 0));
+        strip.setPixelColor(27, strip.Color(0, 0, 0));
+        strip.setPixelColor(31, strip.Color(0, 0, 0));
+        strip.setPixelColor(35, strip.Color(0, 0, 0));
+        strip.show();
+        delay(75);
 
       }
 
