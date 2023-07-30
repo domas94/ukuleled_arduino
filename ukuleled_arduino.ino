@@ -13,8 +13,7 @@
 
 BluetoothSerial SerialBT;
 
-// GPIO PIN 12
-#define PIN 4
+#define GPIO_PIN 12
 #define LED_COUNT 66
 
 int r = 0;
@@ -25,16 +24,16 @@ byte data;
 byte message[5];
 int cnt = 0;
 int pos;
-Adafruit_NeoPixel strip(LED_COUNT, PIN, NEO_GRB + NEO_KHZ800);
+Adafruit_NeoPixel strip(LED_COUNT, GPIO_PIN, NEO_GRB + NEO_KHZ800);
 
 void setup()
 {
   Serial.begin(115200);
-  SerialBT.begin("UKULEDLE"); // Bluetooth device name
+  SerialBT.begin("UKULELED"); // Bluetooth device name
   Serial.println("The device started, now you can pair it with bluetooth!");
   strip.begin(); // This initializes the NeoPixel library.
   strip.setBrightness(3);
-
+  lightshow();
 }
 
 void loop()
@@ -201,63 +200,12 @@ void loop()
 
       if (message[0] == 13 && message[1] == 10 && message[2] == 10)
       {
-        for (int i = 0; i < 6; i++)
-        {
-          strip.setPixelColor(i, strip.Color(255, 255, 255));
-          strip.show();
-          delay(20);
-        }
-
-        for (int i = 6; i < 12; i++)
-        {
-          strip.setPixelColor(i, strip.Color(255, 0, 0));
-          strip.show();
-          delay(20);
-        }
-
-        for (int i = 12; i < 18; i++)
-        {
-          strip.setPixelColor(i, strip.Color(255, 255, 0));
-          strip.show();
-          delay(20);
-        }
-
-        for (int i = 18; i < 24; i++)
-        {
-          strip.setPixelColor(i, strip.Color(0, 255, 0));
-          strip.show();
-          delay(20);
-        }
-
-        for (int i = 24; i < 30; i++)
-        {
-          strip.setPixelColor(i, strip.Color(0, 0, 255));
-          strip.show();
-          delay(20);
-        }
-        for (int i = 30; i < 36; i++)
-        {
-          strip.setPixelColor(i, strip.Color(255, 0, 255));
-          strip.show();
-          delay(20);
-        }
-
-        for (int i = 0; i < 36; i++)
-        {
-          strip.setPixelColor(i, strip.Color(0, 0, 0));
-          strip.show();
-          delay(50);
-        }
+        lightshow();
       }
+
       if (message[0] == 10 && message[1] == 10 && message[2] == 13)
       {
-
-        for (int i = 0; i < 36; i++)
-        {
-          strip.setPixelColor(i, strip.Color(0, 0, 0));
-          strip.show();
-          delay(50);
-        }
+        turn_off_all_leds();
       }
 
       if (message[0] == 50)
@@ -271,4 +219,60 @@ void loop()
 
   // SerialBT.write(bt_serial);
   delay(20);
+}
+
+void lightshow()
+{
+  for (int i = 0; i < 4; i++)
+  {
+    strip.setPixelColor(i, strip.Color(255, 255, 255));
+    strip.show();
+    delay(20);
+  }
+
+  for (int i = 4; i < 12; i++)
+  {
+    strip.setPixelColor(i, strip.Color(255, 0, 0));
+    strip.show();
+    delay(20);
+  }
+
+  for (int i = 12; i < 20; i++)
+  {
+    strip.setPixelColor(i, strip.Color(255, 255, 0));
+    strip.show();
+    delay(20);
+  }
+
+  for (int i = 20; i < 28; i++)
+  {
+    strip.setPixelColor(i, strip.Color(0, 255, 0));
+    strip.show();
+    delay(20);
+  }
+
+  for (int i = 28; i < 32; i++)
+  {
+    strip.setPixelColor(i, strip.Color(0, 0, 255));
+    strip.show();
+    delay(20);
+  }
+  for (int i = 32; i < 36; i++)
+  {
+    strip.setPixelColor(i, strip.Color(255, 0, 255));
+    strip.show();
+    delay(20);
+  }
+
+  turn_off_all_leds();
+}
+
+void turn_off_all_leds()
+{
+  for (int i = 0; i < 36; i++)
+  {
+    strip.setPixelColor(i, strip.Color(0, 0, 0));
+    strip.show();
+    delay(50);
+  }
 }
