@@ -34,7 +34,7 @@ void setup()
   Serial.println("The device started, now you can pair it with bluetooth!");
   strip.begin(); // This initializes the NeoPixel library.
   strip.setBrightness(3);
-  // put your setup code here, to run once:
+
 }
 
 void loop()
