@@ -225,41 +225,41 @@ void lightshow()
 {
   for (int i = 0; i < 4; i++)
   {
-    strip.setPixelColor(i, strip.Color(255, 255, 255));
+    set_white(i);
     strip.show();
     delay(20);
   }
 
   for (int i = 4; i < 12; i++)
   {
-    strip.setPixelColor(i, strip.Color(255, 0, 0));
+    set_red(i);
     strip.show();
     delay(20);
   }
 
   for (int i = 12; i < 20; i++)
   {
-    strip.setPixelColor(i, strip.Color(255, 255, 0));
+    set_yellow(i);
     strip.show();
     delay(20);
   }
 
   for (int i = 20; i < 28; i++)
   {
-    strip.setPixelColor(i, strip.Color(0, 255, 0));
+    set_green(i);
     strip.show();
     delay(20);
   }
 
   for (int i = 28; i < 32; i++)
   {
-    strip.setPixelColor(i, strip.Color(0, 0, 255));
+    set_blue(i);
     strip.show();
     delay(20);
   }
   for (int i = 32; i < 36; i++)
   {
-    strip.setPixelColor(i, strip.Color(255, 0, 255));
+    set_purple(i);
     strip.show();
     delay(20);
   }
@@ -275,4 +275,23 @@ void turn_off_all_leds()
     strip.show();
     delay(50);
   }
+}
+
+void set_white(int i) {
+  strip.setPixelColor(i, strip.Color(255, 255, 255));
+}
+void set_red(int i) {
+  strip.setPixelColor(i, strip.Color(255, 0, 0));
+}
+void set_yellow(int i) {
+  strip.setPixelColor(i, strip.Color(255, 255, 0));
+}
+void set_green(int i) {
+  strip.setPixelColor(i, strip.Color(0, 255, 0));
+}
+void set_blue(int i) {
+  strip.setPixelColor(i, strip.Color(0, 0, 255));
+}
+void set_purple(int i) {
+  strip.setPixelColor(i, strip.Color(255, 0, 255));
 }
